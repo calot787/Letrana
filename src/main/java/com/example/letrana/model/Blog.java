@@ -32,7 +32,7 @@ public class Blog {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario autor;
+    private Usuario usuario;
 
     
 }

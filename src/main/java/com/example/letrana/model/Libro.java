@@ -27,10 +27,11 @@ public class Libro {
     private String autor;
     private double precio;
     private String categoria;
+    
 
-    @OneToMany(mappedBy = "libro")
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private List<Pedido> pedidos;
+    //@OneToMany(mappedBy = "libro")
+   // @com.fasterxml.jackson.annotation.JsonIgnore
+   // private List<Pedido> pedidos;
 
     // getters y setters
 }

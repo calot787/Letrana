@@ -1,5 +1,7 @@
 package com.example.letrana.model;
 
+import java.util.List;
+
 import com.example.letrana.Enum.EstadoPedido;
 
 import jakarta.persistence.Entity;
@@ -9,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,17 +29,15 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name = "libro_id")
-    private Libro libro;
+    //atributoo de relacion a la tabla libro se agregara mas tarde
+    
+    private Double total;
 
     @Enumerated(EnumType.STRING)
     private EstadoPedido estado;
 
-    // getters y setters
-}
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
+}
