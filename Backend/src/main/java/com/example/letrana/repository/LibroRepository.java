@@ -8,7 +8,5 @@ import com.example.letrana.model.Libro;
 
 public interface LibroRepository extends JpaRepository<Libro, Long> {
     Optional<Libro> findByTitulo(String titulo);
-    
-
 
 }

@@ -52,7 +52,5 @@ public class LibroController {
         List<LibroDTO> lista = libroService.obtenerTodos();
         return ResponseEntity.ok(lista);
     }
-
-    
-
+    //prueba
 }
