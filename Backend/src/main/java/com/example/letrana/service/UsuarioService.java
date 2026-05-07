@@ -2,11 +2,14 @@ package com.example.letrana.service;
 
 import java.util.Optional;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.letrana.dto.UsuarioDTO;
 import com.example.letrana.exception.ConflictoException;
+import com.example.letrana.exception.RecursoNoEncontradoException;
 import com.example.letrana.model.Usuario;
 import com.example.letrana.repository.UsuarioRepository;
 
@@ -32,6 +35,25 @@ public class UsuarioService {
         usuarioRepository.save(u);
         return entityTodto(u);
 
+    }
+    public UsuarioDTO getUsuarioActual() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth == null || auth.getName() == null) {
+            throw new RecursoNoEncontradoException("No hay usuario autenticado");
+        }
+
+        String email = auth.getName();
+
+        Optional<Usuario> optionalUsuario = usuarioRepository.findByEmail(email);
+
+        if (optionalUsuario.isEmpty()) {
+            throw new RecursoNoEncontradoException("Usuario no encontrado");
+        }
+
+        Usuario usuario = optionalUsuario.get();
+
+        return entityTodto(usuario);
     }
 
     public Usuario dtoToEntity(UsuarioDTO dto) {

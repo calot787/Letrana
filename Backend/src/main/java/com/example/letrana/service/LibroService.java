@@ -43,6 +43,7 @@ public class LibroService {
         libro.setTitulo(dto.getTitulo());
         libro.setAutor(dto.getAutor());
         libro.setPrecio(dto.getPrecio());
+        libro.setGenero(dto.getGenero());
 
         libroRepository.save(libro);
 
@@ -85,7 +86,8 @@ public class LibroService {
                 dto.getId(),
                 dto.getTitulo(),
                 dto.getAutor(),
-                dto.getPrecio()
+                dto.getPrecio(),
+                dto.getGenero()
         );
     }
 
@@ -95,7 +97,8 @@ public class LibroService {
                 libro.getId(),
                 libro.getTitulo(),
                 libro.getAutor(),
-                libro.getPrecio()
+                libro.getPrecio(),
+                libro.getGenero()
         );
     }
 }

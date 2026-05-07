@@ -27,15 +27,16 @@ public class Libro {
     private String titulo;
     private String autor;
     private double precio;
-    private String categoria;
+    private String genero;
 
     @OneToMany(mappedBy = "libro")
     private List<PedidoLibro> pedidos = new ArrayList<>();
 
-     public Libro(Long id, String titulo, String autor, double precio) {
+     public Libro(Long id, String titulo, String autor, double precio, String genero) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
+        this.genero= genero;
     }
 }

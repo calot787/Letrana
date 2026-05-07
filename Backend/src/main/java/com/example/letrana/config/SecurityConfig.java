@@ -45,13 +45,14 @@ public class SecurityConfig {
                         // LOGIN Y REGISTRO PÚBLICOS
                         .requestMatchers("/api/auth/login").permitAll()
                         .requestMatchers("/api/usuarios/registro").permitAll()
+                        .requestMatchers("/api/usuarios/perfil").authenticated()
 
                         // LIBROS: SOLO ADMIN puede modificar y borrar
-                        .requestMatchers(HttpMethod.PUT, "/api/libros/modificar/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/libros/borrar/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/libros/modificar/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/api/libros/borrar/**").permitAll()
 
                         // LIBROS: obtener y registrar (si quieres registrar solo admin, dímelo)
-                        .requestMatchers(HttpMethod.POST, "/api/libros/registrar").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/libros/registrar").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/libros/**").permitAll()
 
                         // CUALQUIER OTRA PETICIÓN → autenticado

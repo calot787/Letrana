@@ -15,4 +15,5 @@ public class LibroDTO {
     private String titulo;
     private String autor;
     private double precio;
+    private String genero;
 }
