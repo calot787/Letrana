@@ -78,6 +78,9 @@ public class LibroService {
                 .map(this::entityToDto)
                 .toList();
     }
+    
+
+
 
     // DTO → ENTITY
     public Libro dtoToEntity(LibroDTO dto) {
