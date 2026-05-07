@@ -1,0 +1,42 @@
+<div class="editar-container">
+
+  <h2 class="titulo">Editar Libro</h2>
+
+  <form (ngSubmit)="guardarCambios()" #formLibro="ngForm" class="formulario">
+
+    <div class="campo">
+      <label>Título</label>
+      <input type="text" name="titulo" [(ngModel)]="libro.titulo" required />
+    </div>
+
+    <div class="campo">
+      <label>Autor</label>
+      <input type="text" name="autor" [(ngModel)]="libro.autor" required />
+    </div>
+
+    <div class="campo">
+      <label>Género</label>
+      <select name="genero" [(ngModel)]="libro.genero" required>
+        <option value="">Seleccione un género</option>
+        <option *ngFor="let g of generos" [value]="g">{{ g }}</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Precio</label>
+      <input type="number" name="precio" [(ngModel)]="libro.precio" required />
+    </div>
+
+   <!-- <div class="campo">
+      <label>Imagen (URL)</label>
+      <input type="text" name="imagen" [(ngModel)]="libro.imagen" />
+    </div>-->
+
+    <button class="btn-guardar" [disabled]="formLibro.invalid">
+      Guardar Cambios
+    </button>
+
+  </form>
+
+</div>
+

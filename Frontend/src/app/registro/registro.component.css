@@ -1,0 +1,96 @@
+/* Fondo general */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.registro-container {
+  width: 380px;
+  margin: 80px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Título principal */
+.registro-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2d2d2d;
+}
+
+/* Subtítulo */
+.registro-container p.sub {
+  font-size: 15px;
+  color: #6d6d6d;
+  margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 18px;
+  color: #333;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fafafa;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6D4C7D;
+  background: #fff;
+}
+
+/* Botón principal */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 30px;
+  background: #6D4C7D; /* Morado igual al de la imagen */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #6D4C7D;
+}
+
+/* Enlace inferior */
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-link a {
+  color: #6D4C7D;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

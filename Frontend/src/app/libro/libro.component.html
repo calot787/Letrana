@@ -1,0 +1,46 @@
+<div class="catalogo-container">
+
+  <h2 class="titulo">Catálogo de Libros</h2>
+
+  <div class="acciones-superiores">
+    <button class="btn-registrar" routerLink="/libros/registrar">
+      Registrar Libro
+    </button>
+  </div>
+
+  <div class="buscador-filtros">
+    <input 
+      type="text" 
+      placeholder="Buscar..." 
+      [(ngModel)]="busqueda" 
+      class="buscar">
+  </div>
+
+  <div class="grid-libros">
+
+    <div class="libro-card" *ngFor="let libro of libros | filtroLibros:busqueda">
+
+      <h3 class="titulo-libro">{{ libro.titulo }}</h3>
+      <p class="autor">{{ libro.autor }}</p>
+      <p class="genero">{{ libro.genero }}</p>
+      <p class="precio">{{ libro.precio }}€</p>
+
+      <div class="acciones-libro">
+        <button class="btn-modificar" [routerLink]="['/libros/editar', libro.id]">
+          Modificar
+        </button>
+
+        <button class="btn-borrar" (click)="borrar(libro.id)">
+          Borrar
+        </button>
+      </div>
+
+      <button class="btn-anadir" (click)="anadir(libro)">
+        Añadir
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
